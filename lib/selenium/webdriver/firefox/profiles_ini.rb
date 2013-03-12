@@ -7,6 +7,7 @@ module Selenium
 
         def initialize
           @ini_path = File.join(Util.app_data_path, "profiles.ini")
+          $stderr.puts "@ini_path: #{@ini_path}"
           @profile_paths = {}
 
           parse if File.exist?(@ini_path)
