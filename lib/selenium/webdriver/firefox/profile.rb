@@ -73,9 +73,13 @@ module Selenium
           profile_dir = @model ? create_tmp_copy(@model) : Dir.mktmpdir("webdriver-profile")
           FileReaper << profile_dir
 
+          $stderr.puts "about to install extensions"
           install_extensions(profile_dir)
+          $stderr.puts "about to delete lock files"
           delete_lock_files(profile_dir)
+          $stderr.puts "about to delete extensions cache"
           delete_extensions_cache(profile_dir)
+          $stderr.puts "about to update user prefs"
           update_user_prefs_in(profile_dir)
 
           profile_dir

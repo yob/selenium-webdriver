@@ -30,11 +30,17 @@ module Selenium
 
         def launch
           socket_lock.locked do
+            $stderr.puts "about to find free port"
             find_free_port
+            $stderr.puts "about to create profile"
             create_profile
+            $stderr.puts "about to start silent and wait"
             start_silent_and_wait
+            $stderr.puts "about to start"
             start
+            $stderr.puts "about to connect until stable"
             connect_until_stable
+            $stderr.puts "started!"
           end
 
           self
