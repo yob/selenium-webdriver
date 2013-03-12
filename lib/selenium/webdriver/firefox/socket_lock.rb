@@ -47,7 +47,7 @@ module Selenium
 
           true
         rescue SocketError, Errno::EADDRINUSE, Errno::EBADF => ex
-          $stderr.puts "#{ENV["SPEC_PARALLEL"]}: #{self}: #{ex.class}: #{ex.message}"
+          $stderr.puts "#{self}: #{ex.class}: #{ex.message}"
           false
         end
 
