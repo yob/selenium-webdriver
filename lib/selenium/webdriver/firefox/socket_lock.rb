@@ -47,7 +47,7 @@ module Selenium
 
           true
         rescue SocketError, Errno::EADDRINUSE, Errno::EBADF => ex
-          $stderr.puts "#{self}: #{ex.message}" if $DEBUG
+          $stderr.puts "#{self}: #{ex.message}"
           false
         end
 
