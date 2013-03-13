@@ -14,6 +14,8 @@ module Selenium
 
           raise Error::WebDriverError, "invalid port: #{@port}" if @port < 1
 
+          $stderr.puts "firefox port: #{@port}"
+
           if profile.kind_of? Profile
             @profile = profile
           else
